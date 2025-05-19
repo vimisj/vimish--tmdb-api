@@ -1,0 +1,1 @@
+<?php echo 'TMDb API Ready'; ?>
