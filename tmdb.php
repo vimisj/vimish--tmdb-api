@@ -16,7 +16,6 @@ if (!isset($_GET['query'])) {
 $query = urlencode($_GET['query']);
 $searchUrl = "$baseUrl?api_key=$apiKey&query=$query&language=es";
 
-// Preparar cURL
 function getApiData($url) {
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $url);
@@ -27,7 +26,6 @@ function getApiData($url) {
   return json_decode($response, true);
 }
 
-// Obtener resultados y géneros
 $data = getApiData($searchUrl);
 $genresData = getApiData($genreUrl);
 $genres = [];
